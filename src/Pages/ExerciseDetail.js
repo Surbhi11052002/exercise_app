@@ -44,6 +44,7 @@ const ExerciseDetail = () => {
         exerciseOptions
       );
       setEquipmentExercises(equipmentExercisesData);
+      window.scrollTo({ top: 150, behavior: "smooth" });
     };
 
     fetchExercisesData();

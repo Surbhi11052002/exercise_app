@@ -1,10 +1,15 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
 
 import Logo from "../assets/images/Logo.png";
 
 const Navbar = () => {
+  const location = useLocation();
+
+  // Check if the current pathname is the home page ("/")
+  const isHomePage = location.pathname === "/";
   return (
     <Stack
       direction="row"
@@ -38,12 +43,19 @@ const Navbar = () => {
         >
           Home
         </Link>
-        <a
-          href="#exercises"
-          style={{ textDecoration: "none", color: "#3A1212" }}
-        >
-          Exercises
-        </a>
+
+        {isHomePage && (
+          <a
+            href="#exercises"
+            style={{
+              textDecoration: "none",
+              color: "#3A1212",
+              borderBottom: "3px solid #FF2625",
+            }}
+          >
+            Exercises
+          </a>
+        )}
       </Stack>
     </Stack>
   );

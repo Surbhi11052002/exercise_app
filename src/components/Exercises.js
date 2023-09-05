@@ -17,6 +17,12 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
   const paginate = (e, value) => {
     setCurrentPage(value);
+    const exercisesSection = document.getElementById("exercises");
+
+    if (exercisesSection) {
+      // Scroll to the "exercises" section
+      exercisesSection.scrollIntoView({ behavior: "smooth" });
+    }
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
